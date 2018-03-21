@@ -18,8 +18,33 @@ document.getElementById('add').addEventListener('click', function () {
 
 });
 
+function removeItem() {
+    // grab the list item
+    var item = this.parentNode.parentNode;
+    var parent = item.parentNode;
 
+    parent.removeChild(item);
+}
 
+function completeItem() {
+    var item = this.parentNode.parentNode;
+    var parent = item.parentNode;
+    var id = parent.id;
+
+    // Check if the item shoul be added to
+    var target = (id === 'todo') ? document.getElementById('completed'):document.getElementById('todo');
+
+    // if (id === 'todo') {
+    //     // It's a todo item to be completed
+    //     target = document.getElementById('completed');
+    // } else {
+    //     // It's completed item to be "re-done"
+    //     target = document.getElementById('todo');
+    // }
+
+    parent.removeChild(item);
+    target.insertBefore(item, target.childNodes[0]);
+}
 // Add a new item to the todo list
 function addItemTodo(text) {
     var list = document.getElementById('todo');
@@ -34,11 +59,14 @@ function addItemTodo(text) {
     remove.innerHTML = removeSVG;
 
     // Add click event for remove an item
-    remove.addEventListener(click, removeItem);
+        remove.addEventListener('click', removeItem);
 
     var complete = document.createElement('button');
     complete.classList.add('complete');
     complete.innerHTML = completeSVG;
+
+    // Add click event for completing the item
+    complete.addEventListener('click', completeItem);
 
     buttons.appendChild(remove);
     buttons.appendChild(complete);

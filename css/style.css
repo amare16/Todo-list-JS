@@ -22,7 +22,7 @@ header {
     left: 0;
     z-index: 5;
 
-    background: #25b99a;
+    background: #5174ff;
     box-shadow: 0px 2px 4px rgba(44, 62, 80, 0.15);
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -175,6 +175,9 @@ ul.todo li.buttons button.remove:hover svg.fill {
     fill: #e85656;
 }
 
+
+
+
 .svg-icon {
     width: 22px;
     height: 22px;
@@ -191,3 +194,4 @@ ul.todo li.buttons button.remove:hover svg.fill {
     stroke: #4691f6;
     stroke-width: 1;
 }
+
