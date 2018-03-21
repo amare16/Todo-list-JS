@@ -97,6 +97,7 @@ header button svg .fill {
 ul.todo {
     width: 100%;
     float: left;
+    list-style-type: none;
 }
 
 ul.todo li {
